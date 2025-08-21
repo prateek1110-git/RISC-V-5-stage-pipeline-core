@@ -1,0 +1,16 @@
+addi x5, x0, 5
+addi x6, x0, 3
+add x7, x5, x6
+lw x8, 0(x0)
+addi x9, x0, 1
+add x10, x8, x9
+
+
+
+//instr1 Explanation (bit fields from the 32-bit word 00000000010100000000001010010011):
+
+opcode [6:0] = 0010011 (0x13) → OP-IMM (I-type arithmetic)
+rd [11:7] = 00101 = 5 → destination register x5
+funct3 [14:12]= 000 → ADDI (add immediate)
+rs1 [19:15]= 00000 = x0 (zero)
+imm[11:0] [31:20] = 000000000101 = decimal 5
